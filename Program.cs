@@ -6,9 +6,11 @@ namespace ConsoleLibrary {
     static void Main(string[] args) {
       Console.Clear();
       Library library = new Library("Nampa Public Library");
-      library.AddBook(new Book("Wocket In My Pocket", "Dr. Seuss", "1234", "1-1-2000"));
-      library.AddBook(new Book("Moby Dick", "Herman Melville", "1", "1470"));
-      library.AddBook(new Book("The Fellowship", "Grey Beard", "219123-21", "1954", false));
+      library.AddItem(new Book("Wocket In My Pocket", "Dr. Seuss", "1234", "1-1-2000"));
+      library.AddItem(new Book("Moby Dick", "Herman Melville", "1", "1470"));
+      library.AddItem(new Book("The Fellowship", "Grey Beard", "219123-21", "1954", false));
+      library.AddItem(new Magazine("People Magazine", "Jess Cagle", "24/7"));
+      library.AddItem(new Magazine("Time Magazine", "Edward Felsenthal", "24/7", false));
 
       // Typer.TypeLine(library.Name);
       // library.ViewBooks();
@@ -37,16 +39,16 @@ namespace ConsoleLibrary {
         switch (input) {
           case "c":
           case "checkout":
-            library.CheckoutBook();
+            library.CheckoutItem();
             break;
           case "r":
           case "return":
-            library.ReturnBook();
+            library.ReturnItem();
             break;
           case "v":
           case "view":
             Console.Write('\n');
-            library.ViewBooks();
+            library.ViewItems();
             Console.Write('\n');
             break;
           case "q":
