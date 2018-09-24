@@ -3,9 +3,9 @@ using System.Threading;
 
 namespace ConsoleLibrary.Models {
   public class Typer {
-    public static void Type(string output) {
+    public static void Type(string output, int delay=25) {
       foreach (char c in output) {
-        Thread.Sleep(50);
+        Thread.Sleep(delay);
         Console.Write(c);
       }
     }
